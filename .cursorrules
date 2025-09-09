@@ -1,0 +1,10 @@
+# Minimal, low-cost stack
+- Next.js 14 (App Router) + TypeScript + Tailwind + shadcn/ui.
+- Supabase for Auth, Postgres, Storage (free tier). Use RLS for authorization.
+- Postgres JSONB for resume bodies + AI outputs; relational for users, versions, comments.
+- No queues or search; all requests must finish < 10s.
+- File uploads: Supabase Storage; allow .docx and .md; 10MB max.
+- AI via provider-agnostic wrapper; default OpenAI model from env.
+- Validate all server action inputs with zod; never log PII.
+- Pages: /, /dashboard, /r/[id], /r/[id]/diff, /share/[slug].
+- Features: auth (magic link + Google/GitHub), upload+parse, versioning, diff, comments, visibility (private/link/public), AI Quick Review.
